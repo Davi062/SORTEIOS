@@ -37,7 +37,7 @@ export default function SorteioPage() {
   const fetchWinners = async () => {
     try {
       setIsLoadingWinners(true);
-      const response = await fetch('http://localhost:8080/participants');
+      const response = await fetch('https://an-sorteador-production.up.railway.app/participants');
       if (!response.ok) {
         throw new Error('Erro ao buscar vencedores');
       }
@@ -77,7 +77,7 @@ export default function SorteioPage() {
   // Função para buscar os participantes
   const fetchParticipants = async () => {
     try {
-      const response = await fetch('http://localhost:8080/participants');
+      const response = await fetch('https://an-sorteador-production.up.railway.app/participants');
       if (!response.ok) {
         throw new Error('Erro ao buscar participantes');
       }
@@ -104,7 +104,7 @@ export default function SorteioPage() {
   // Função para realizar o sorteio
   const markAsWinner = async (participantId: string) => {
     try {
-      const response = await fetch(`http://localhost:8080/participants/winner/${participantId}`, {
+      const response = await fetch(`https://an-sorteador-production.up.railway.app/participants/winner/${participantId}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',

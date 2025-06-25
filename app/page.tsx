@@ -99,7 +99,7 @@ const handleFollowClick = async () => {
   
   try {
     // Envia os dados quando o usuário clicar em seguir
-    const response = await fetch('http://localhost:8080/participants', {
+    const response = await fetch('https://an-sorteador-production.up.railway.app/participants', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
